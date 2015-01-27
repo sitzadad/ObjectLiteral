@@ -1,10 +1,9 @@
-// var templates={
-//   listing:[
-//     "<article>",
-//     "<h3><%= itemName %></h3>",
-//     "<p><%= itemDescription %></p>",
-//     "<span><%= itemPrice %></span>",
-//     "<img src=\"<%=itemImage %>\"/>",
-//     "</article>"
-//   ].join("");
-// };
+var templates={};
+  templates.listing=[
+    "<article>",
+    "<h1><%= name %></h1>",
+    "<img src=\"<%= image %>\"/>",
+    "<button>Buy now! <%= price %></button>",
+    "<p><%= description %></p>",
+    "</article>"
+  ].join("");
