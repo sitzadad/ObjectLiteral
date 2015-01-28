@@ -57,10 +57,15 @@ var methods={
       image:$("aside input[name=\"image\"]").val()
     };
     //override current array object with form contents
-    console.log(arrayPos);
+    console.log(arrayPos +"this line");
     products[arrayPos]=updatedProduct;
     //remove current articles
     $("article").remove();
+    //get rid of binding to avoid multiple bindings on second init
+    $("#submitButton").off("click", methods.createProduct);
+    $("section").off("click", ".deleteButton", methods.deleteProduct);
+    $("section").off("click", ".updateButton", methods.updateProduct);
+    $("#altSubmitButton").off("click", methods.overrideProduct);
     //reinitalize the articles (including update)
     methods.init();
 
